@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>Events for <%= @date %></h2>
+    <h2><%= @date ? "Events for #{Date.parse(@date).strftime("%A")}, #{@date}" : "All Events" %></h2>
     <table class="calendar table table-bordered table-striped">
     <tr>
       <th>Date</th>
@@ -12,7 +12,7 @@
 
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.event_date %></td>
+        <td><%= event.event_date ? event.event_date.strftime("%A") : '' %>, <%= event.event_date %></td>
         <td><%= event.title %></td>
         <td><%= event.text %></td>
         <td><%= link_to edit_event_path(event.id), class: "btn btn-success btn-xs" do %>
