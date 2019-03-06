@@ -9,16 +9,6 @@ My specs:
 
 * SQLite 3.27.2
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Installation
+Please run rails db:migrate to generate the sqlite database
+No other installations needed
