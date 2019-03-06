@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Events for <%= @date %></h2>
+    <table class="calendar table table-bordered table-striped">
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Text</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_date %></td>
+        <td><%= event.title %></td>
+        <td><%= event.text %></td>
+        <td><%= link_to edit_event_path(event.id), class: "btn btn-success btn-xs" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+        </td>
+        <td>
+          <%= link_to event_path(event.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success btn-xs" do %>
+            <i class="glyphicon glyphicon-remove"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

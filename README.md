@@ -1,13 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+How to get the app up and running goes here.
+My specs:
 
-Things you may want to cover:
+* Ruby version 2.3.3p222
 
-* Ruby version
+* Rails 5.2.2
 
-* System dependencies
+* SQLite 3.27.2
 
 * Configuration
 

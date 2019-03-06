@@ -12,9 +12,20 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 clearfix">
     <%= calendar @date do |date| %>
       <%= date.day %>
+      <div class="pull-right">
+        <%= link_to new_event_path(date: date), class: "btn btn-success btn-xs" do %>
+          <i class="glyphicon glyphicon-plus"></i>
+        <% end %>
+      </div>
+      <hr class="hr-small">
+      <p class="pull-right">
+        <small>
+          <i><%= linktoevents date %></i>
+        </small>
+      </p>
     <% end %>
   </div>
 </div>

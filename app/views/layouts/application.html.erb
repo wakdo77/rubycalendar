@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rcalendar</title>
+    <title>Ruby Calendar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,17 +9,35 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
     <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+
   </head>
 
   <body>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Ruby Calendar Lazy Verion</h1>
+          <h1>Ruby Calendar</h1>
           <p>My first steps to get into Ruby!</p>
+        </div>
+        <div class="col-md-12">
+          <div class="well">
+            <%= link_to 'calendar home', calendar_path, class: "btn-default btn" %> <%= link_to 'all events', events_path, class: "btn-default btn" %>
+          </div>
         </div>
       </div>
       <%= yield %>
+      <div class="row">
+        <div class="col-md-12">
+          <!--<div class="well controls">
+            <%= link_to calendar_path, class: "btn btn-default" do %>
+              calendar home
+            <% end %>
+            <%= link_to events_path, class: "btn btn-default" do %>
+              all events
+            <% end %>
+          </div>-->
+        </div>
+      </div>
     </div>
   </body>
 </html>
