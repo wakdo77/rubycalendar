@@ -1,6 +1,6 @@
 class Calendar < Struct.new(:view, :date, :callback)
     # HEADER = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday]
-    HEADER = %w[Mon Tues Wed Thu Fri Sat Sun]
+    HEADER = %w[# Mon Tues Wed Thu Fri Sat Sun]
     START_DAY = :monday
 
     delegate :content_tag, to: :view
@@ -20,9 +20,14 @@ class Calendar < Struct.new(:view, :date, :callback)
     def week_rows
       weeks.map do |week|
         content_tag :tr do
-          week.map { |day| day_cell(day) }.join.html_safe
+          #weeknumber = content_tag :td, week.first.cweek
+          week_cell(week.first) + week.map { |day| day_cell(day) }.join.html_safe
         end
       end.join.html_safe
+    end
+
+    def week_cell(day)
+      weeknumbers = content_tag :td, day.cweek, class: "week-numbers small"
     end
 
     def day_cell(day)

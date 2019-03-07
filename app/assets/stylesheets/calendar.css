@@ -5,3 +5,10 @@
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
+.not-month{
+  background: rgba(220,160,140,0.2);
+}
+.week-numbers{
+  width: 0.1% !important;
+  color: gray;
+}
