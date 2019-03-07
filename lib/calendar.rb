@@ -31,7 +31,7 @@ class Calendar < Struct.new(:view, :date, :callback)
     end
 
     def day_cell(day)
-      content_tag :td, view.capture(day, &callback), class: day_classes(day)
+      days = content_tag :td, view.capture(day, &callback), class: day_classes(day)
     end
 
     def day_classes(day)
